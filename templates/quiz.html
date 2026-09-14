@@ -6,14 +6,14 @@
 <section class="section" style="padding-bottom: 0;">
     <div class="container">
         <h1>Test your kitchen chemistry</h1>
-        <p class="lede">Six questions pulled straight from the concepts on this site. No sign-up, no saved scores — just refresh to try again.</p>
+        <p class="lede">Ten questions pulled straight from the concepts on this site, shuffled into a new order every time. No sign-up, no saved scores — just try again for a fresh run.</p>
     </div>
 </section>
 
 <section class="section">
     <div class="container">
         <div class="quiz-wrap">
-            <p class="quiz-progress" id="quizProgress">Question 1 of 6</p>
+            <p class="quiz-progress" id="quizProgress">Question 1 of 10</p>
 
             <div class="quiz-card" id="quizCard">
                 <p class="quiz-question" id="quizQuestion"></p>
@@ -34,7 +34,7 @@
 
 <script>
 (function () {
-    var quizData = [
+    var allQuizData = [
         {
             q: "What makes seared meat turn brown, while boiled meat stays pale?",
             options: ["The Maillard reaction", "Caramelization of fat", "Loss of moisture", "The amount of salt used"],
@@ -70,9 +70,34 @@
             options: ["Gluten", "Collagen", "Casein", "Lecithin"],
             correct: 3,
             explain: "Lecithin — it has a water-loving end and an oil-loving end, so it sits right at the boundary between the two liquids."
+        },
+        {
+            q: "What does baking powder contain that baking soda alone does not?",
+            options: ["An acid", "A base", "Extra water", "Yeast"],
+            correct: 0,
+            explain: "Baking powder already has its own acid — usually cream of tartar — mixed in with the soda, so it can leaven a batter with no acidic ingredients added."
+        },
+        {
+            q: "What actually causes tears when you're near a chopped onion?",
+            options: ["Onion juice splashing in your eye", "A volatile sulfur gas reacting with your tears", "Bacteria irritating your eyes", "The onion's strong smell alone"],
+            correct: 1,
+            explain: "Cutting an onion releases a volatile sulfur compound that drifts up to your eyes and reacts with your tears to form a mild acid — that's the sting."
+        },
+        {
+            q: "Why does whipped cream eventually turn into butter if you keep whisking it?",
+            options: ["The fat globules clump together and squeeze out the liquid", "The cream warms up and melts", "Air escapes and the cream deflates", "Sugar crystallizes inside it"],
+            correct: 0,
+            explain: "Overwhisked fat globules clump together and force out the trapped liquid — buttermilk — leaving behind a solid mass of fat: butter."
+        },
+        {
+            q: "Why does ice cream stay soft while a tray of plain ice freezes rock hard?",
+            options: ["Ice cream has less water overall", "Churning and dissolved sugar/fat stop large ice crystals from forming", "Ice cream is never fully frozen", "Salt is added directly to ice cream"],
+            correct: 1,
+            explain: "Churning breaks up ice crystals as they form, and the sugar, fat, and air in ice cream all get in the way of crystal growth — keeping it soft enough to scoop."
         }
     ];
 
+    var quizData = [];
     var current = 0;
     var score = 0;
     var answered = false;
@@ -87,6 +112,22 @@
     var scoreEl = document.getElementById("quizScore");
     var commentEl = document.getElementById("quizComment");
     var restartBtn = document.getElementById("quizRestart");
+
+    function shuffle(arr) {
+        var a = arr.slice();
+        for (var i = a.length - 1; i > 0; i--) {
+            var j = Math.floor(Math.random() * (i + 1));
+            var tmp = a[i]; a[i] = a[j]; a[j] = tmp;
+        }
+        return a;
+    }
+
+    function startQuiz() {
+        quizData = shuffle(allQuizData);
+        current = 0;
+        score = 0;
+        renderQuestion();
+    }
 
     function renderQuestion() {
         answered = false;
@@ -156,14 +197,12 @@
     });
 
     restartBtn.addEventListener("click", function () {
-        current = 0;
-        score = 0;
         quizCard.style.display = "block";
         resultCard.style.display = "none";
-        renderQuestion();
+        startQuiz();
     });
 
-    renderQuestion();
+    startQuiz();
 })();
 </script>
 

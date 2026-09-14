@@ -1,0 +1,177 @@
+{% extends "base.html" %}
+{% block title %}The Science — {{ site_name }}{% endblock %}
+
+{% block content %}
+
+<section class="section" style="padding-bottom: 0;">
+    <div class="container">
+        <h1>The science in your kitchen</h1>
+        <p class="lede">Eight reactions explain almost everything that happens between your fridge and your dinner plate. Here's what's actually going on.</p>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+
+        <div class="concept-row">
+            <div class="concept-figure">
+                <svg viewBox="0 0 200 150" role="img" aria-label="A toast shape browning from pale center to dark edge">
+                    <defs><radialGradient id="mai" cx="50%" cy="50%" r="65%"><stop offset="0%" stop-color="#F4DDCB"/><stop offset="100%" stop-color="#B94E1E"/></radialGradient></defs>
+                    <rect x="40" y="35" width="120" height="90" rx="14" fill="url(#mai)"/>
+                    <path d="M60 25 C65 15 75 15 80 25" stroke="#56635F" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.55"/>
+                    <path d="M120 25 C125 15 135 15 140 25" stroke="#56635F" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.55"/>
+                </svg>
+            </div>
+            <div class="concept-text">
+                <span class="kicker">Browning &amp; flavor</span>
+                <h2>The Maillard Reaction</h2>
+                <p>Sear a piece of meat, toast a slice of bread, or roast a coffee bean, and you're watching amino acids and sugars react under dry heat. Named after the French chemist Louis-Camille Maillard, the reaction breaks down proteins and carbohydrates and reassembles them into hundreds of new flavor and aroma compounds, along with that deep golden-brown colour.</p>
+                <p>It needs temperatures above roughly 140°C (285°F), which is why it barely happens in a pot of simmering water, capped at 100°C. Boil a chicken breast and it stays pale; sear it in a dry pan and it browns in minutes.</p>
+                <p class="concept-note">Pat food dry before searing — extra surface water has to boil off first, which steals heat and delays browning.</p>
+            </div>
+        </div>
+
+        <div class="concept-row reverse">
+            <div class="concept-figure">
+                <svg viewBox="0 0 200 150" role="img" aria-label="Three circles going from pale to deep amber, representing sugar caramelizing">
+                    <circle cx="45" cy="75" r="18" fill="#F1E2B8"/>
+                    <circle cx="100" cy="75" r="20" fill="#D9622B"/>
+                    <circle cx="158" cy="75" r="22" fill="#B94E1E"/>
+                    <path d="M66 75 H80 M123 75 H136" stroke="#56635F" stroke-width="2" stroke-dasharray="3 4"/>
+                </svg>
+            </div>
+            <div class="concept-text">
+                <span class="kicker">Sugar chemistry</span>
+                <h2>Caramelization</h2>
+                <p>Where Maillard needs protein, caramelization works on sugar alone. Heat sucrose past about 170°C (340°F) and its molecules break apart and recombine, releasing a cascade of nutty, buttery, faintly bitter compounds along with that familiar amber colour.</p>
+                <p>It's what turns granulated sugar into caramel sauce, and what gives slow-cooked onions their sweetness — though onions also pick up some Maillard browning from their small amount of protein, so the two reactions are usually working side by side.</p>
+                <p class="concept-note">Watch the pan closely once sugar starts to colour — the gap between perfect caramel and burnt sugar is often under a minute.</p>
+            </div>
+        </div>
+
+        <div class="concept-row">
+            <div class="concept-figure">
+                <svg viewBox="0 0 200 150" role="img" aria-label="Small orange droplets dispersed inside a larger blue circle, representing an oil-in-water emulsion">
+                    <circle cx="100" cy="75" r="58" fill="#D6E7E7"/>
+                    <circle cx="70" cy="55" r="10" fill="#D9622B"/>
+                    <circle cx="120" cy="60" r="7" fill="#D9622B"/>
+                    <circle cx="95" cy="95" r="12" fill="#D9622B"/>
+                    <circle cx="135" cy="95" r="6" fill="#D9622B"/>
+                    <circle cx="65" cy="95" r="6" fill="#D9622B"/>
+                </svg>
+            </div>
+            <div class="concept-text">
+                <span class="kicker">Oil meets water</span>
+                <h2>Emulsification</h2>
+                <p>Oil and water don't mix — until an emulsifier steps in. These are molecules with a water-loving head and an oil-loving tail, so they sit at the boundary between the two liquids and let one disperse as tiny droplets inside the other.</p>
+                <p>Egg yolk supplies the emulsifier in mayonnaise, a compound called lecithin; mustard does the job in a vinaigrette. Whisk hard enough and long enough, and thousands of microscopic oil droplets get trapped in the water, producing something that looks and behaves like a single smooth liquid.</p>
+                <p class="concept-note">An emulsion breaks when oil is added too fast, or the mixture is shocked by sudden heat or cold — add oil in a slow, steady stream while whisking.</p>
+            </div>
+        </div>
+
+        <div class="concept-row reverse">
+            <div class="concept-figure">
+                <svg viewBox="0 0 200 150" role="img" aria-label="A domed loaf shape with bubbles inside, representing gas trapped by fermentation">
+                    <path d="M40 120 Q40 55 100 50 Q160 55 160 120 Z" fill="#F4DDCB"/>
+                    <circle cx="80" cy="90" r="5" fill="#2E7D8C"/>
+                    <circle cx="105" cy="75" r="4" fill="#2E7D8C"/>
+                    <circle cx="125" cy="95" r="6" fill="#2E7D8C"/>
+                    <circle cx="95" cy="105" r="3.5" fill="#2E7D8C"/>
+                </svg>
+            </div>
+            <div class="concept-text">
+                <span class="kicker">Microbes at work</span>
+                <h2>Fermentation</h2>
+                <p>Fermentation hands the cooking over to microorganisms. Yeast eats the sugars in bread dough and releases carbon dioxide and a little ethanol as waste; the gas gets trapped in a stretchy gluten network and the dough rises. Bake it, and those same gas pockets set into the bread's crumb.</p>
+                <p>Lactic acid bacteria do a related job in yogurt, sourdough, and pickles — instead of gas, they produce lactic acid, which thickens milk into yogurt and gives fermented foods their characteristic tang.</p>
+                <p class="concept-note">A dough that's over-proofed collapses because the gluten network has stretched past its limit and can no longer hold the gas.</p>
+            </div>
+        </div>
+
+        <div class="concept-row">
+            <div class="concept-figure">
+                <svg viewBox="0 0 200 150" role="img" aria-label="A pH scale bar from red to blue with bubbles rising, representing an acid-base leavening reaction">
+                    <defs><linearGradient id="phgrad" x1="0" x2="1"><stop offset="0%" stop-color="#D9622B"/><stop offset="50%" stop-color="#E7DD9A"/><stop offset="100%" stop-color="#2E7D8C"/></linearGradient></defs>
+                    <rect x="30" y="65" width="140" height="16" rx="8" fill="url(#phgrad)"/>
+                    <circle cx="115" cy="73" r="7" fill="#202B29"/>
+                    <circle cx="70" cy="40" r="4" fill="#2E7D8C"/>
+                    <circle cx="85" cy="30" r="3" fill="#2E7D8C"/>
+                    <circle cx="60" cy="25" r="2.5" fill="#2E7D8C"/>
+                </svg>
+            </div>
+            <div class="concept-text">
+                <span class="kicker">Gas &amp; rise</span>
+                <h2>Acids, Bases &amp; Leavening</h2>
+                <p>Baking soda is a base — sodium bicarbonate. Mixed with an acid — buttermilk, lemon juice, brown sugar, even cocoa powder — it reacts to release carbon dioxide gas on the spot, which leavens quick breads and pancakes.</p>
+                <p>Baking powder carries its own acid already mixed in with the soda, so it can leaven a batter with no acidic ingredients at all. Most baking powder is "double-acting": part of the gas releases the moment it gets wet, and the rest releases again once it hits oven heat.</p>
+                <p class="concept-note">Baking soda without enough acid to react with leaves a bitter, metallic aftertaste — that's the unreacted base you're tasting.</p>
+            </div>
+        </div>
+
+        <div class="concept-row reverse">
+            <div class="concept-figure">
+                <svg viewBox="0 0 200 150" role="img" aria-label="An oval representing an egg, with coiled lines on one side and tangled lines on the other, showing protein unfolding">
+                    <ellipse cx="100" cy="75" rx="70" ry="55" fill="#FBF6E9" stroke="#CDD6D0" stroke-width="2"/>
+                    <path d="M50 60 q8 -10 16 0 t16 0 t16 0" stroke="#2E7D8C" stroke-width="3" fill="none" stroke-linecap="round"/>
+                    <path d="M50 85 q8 -10 16 0 t16 0 t16 0" stroke="#2E7D8C" stroke-width="3" fill="none" stroke-linecap="round"/>
+                    <path d="M125 55 L165 55 M125 65 L160 68 M128 78 L163 75 M125 90 L158 92 M130 100 L162 102" stroke="#D9622B" stroke-width="3" stroke-linecap="round"/>
+                </svg>
+            </div>
+            <div class="concept-text">
+                <span class="kicker">Heat &amp; structure</span>
+                <h2>Protein Denaturation</h2>
+                <p>A raw egg white is mostly water and tightly folded proteins, which is why it's clear and runny. Heat — or a strong acid — breaks the weak bonds holding those proteins in their folded shape. They unfold, then re-bond with their neighbours into a new, tangled network that traps water and turns opaque and firm.</p>
+                <p>The same process firms up meat as it cooks, which is why doneness is really a protein-structure question — and why meat cooked past a certain point starts squeezing out moisture and turning dry, no matter how good the cut.</p>
+                <p class="concept-note">Ceviche "cooks" fish using only citrus acid, no heat required — acid denatures protein too.</p>
+            </div>
+        </div>
+
+        <div class="concept-row">
+            <div class="concept-figure">
+                <svg viewBox="0 0 200 150" role="img" aria-label="Three small diagrams showing conduction, convection, and radiation">
+                    <rect x="15" y="95" width="45" height="8" rx="4" fill="#202B29"/>
+                    <rect x="25" y="75" width="25" height="20" rx="3" fill="#D9622B"/>
+                    <path d="M20 65 h35" stroke="#B94E1E" stroke-width="2"/>
+                    <circle cx="100" cy="80" r="28" fill="none" stroke="#2E7D8C" stroke-width="2"/>
+                    <path d="M88 68 a16 16 0 1018 4" stroke="#2E7D8C" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                    <circle cx="160" cy="80" r="6" fill="#D9622B"/>
+                    <circle cx="160" cy="80" r="16" fill="none" stroke="#D9622B" stroke-width="1.6" opacity="0.5"/>
+                    <circle cx="160" cy="80" r="26" fill="none" stroke="#D9622B" stroke-width="1.6" opacity="0.3"/>
+                </svg>
+            </div>
+            <div class="concept-text">
+                <span class="kicker">How heat travels</span>
+                <h2>Heat Transfer</h2>
+                <p>Cooking methods differ mainly in how heat reaches the food. Conduction passes heat through direct contact — a hot pan against a steak — fast, but uneven, since only the touching surface heats first. Convection moves heat through a circulating fluid, like the hot air inside an oven or the currents in a pot of soup, cooking more evenly but more slowly.</p>
+                <p>Radiation delivers heat as electromagnetic waves — a grill's infrared glow, or a microwave exciting water molecules directly inside the food, which is why microwaved food heats from the inside out instead of the surface in.</p>
+                <p class="concept-note">A microwave doesn't brown food because it never gets hot and dry enough for Maillard or caramelization to happen.</p>
+            </div>
+        </div>
+
+        <div class="concept-row reverse" style="border-bottom: none;">
+            <div class="concept-figure">
+                <svg viewBox="0 0 200 150" role="img" aria-label="A glass with tiny dissolved dots near the top, larger particles in the middle, and a wavy gel network at the bottom">
+                    <path d="M55 30 H145 L130 130 H70 Z" fill="none" stroke="#202B29" stroke-width="2.5"/>
+                    <circle cx="85" cy="52" r="2" fill="#2E7D8C"/>
+                    <circle cx="105" cy="58" r="2" fill="#2E7D8C"/>
+                    <circle cx="95" cy="66" r="2" fill="#2E7D8C"/>
+                    <circle cx="115" cy="48" r="2" fill="#2E7D8C"/>
+                    <circle cx="82" cy="90" r="6" fill="#D9622B" opacity="0.85"/>
+                    <circle cx="108" cy="95" r="7" fill="#D9622B" opacity="0.85"/>
+                    <circle cx="95" cy="82" r="5" fill="#D9622B" opacity="0.85"/>
+                    <path d="M75 115 q10 -8 20 0 t20 0 t10 0" stroke="#6B8F5A" stroke-width="3" fill="none" stroke-linecap="round"/>
+                </svg>
+            </div>
+            <div class="concept-text">
+                <span class="kicker">Mixtures &amp; texture</span>
+                <h2>Solutions, Colloids &amp; Gels</h2>
+                <p>Not every kitchen mixture is the same kind of mixture. A solution is dissolved all the way down to individual molecules — sugar stirred into tea disappears completely. A colloid keeps its particles slightly larger and merely suspended rather than dissolved, like the fat droplets floating in milk or the air bubbles trapped in whipped cream.</p>
+                <p>A gel is a special case: a network of long protein or starch molecules — like the collagen in gelatin — that traps liquid inside itself as it cools, holding a shape without being fully solid. It's the difference between a sauce, a foam, and a panna cotta.</p>
+                <p class="concept-note">Shake a bottle of vinaigrette and it turns cloudy — a temporary colloid — then separates back into two layers as the emulsion breaks.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+{% block title %}{{ site_name }} — Where Cooking Meets Chemistry{% endblock %}
+
+{% block content %}
+
+<section class="hero">
+    <div class="container hero-inner">
+        <div class="hero-copy">
+            <h1>Your kitchen is already a chemistry lab.</h1>
+            <p class="lede">Every fried egg, rising loaf of bread, and browned onion is a reaction in progress. This site walks through the heat, acids, microbes, and molecules that are doing the real cooking — and how to see them for yourself.</p>
+            <div class="hero-actions">
+                <a href="{{ url_for('science') }}" class="btn btn-flame">Explore the science</a>
+                <a href="{{ url_for('experiments') }}" class="btn btn-outline">Try an experiment</a>
+            </div>
+        </div>
+        <div class="hero-art">
+            <svg viewBox="0 0 460 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration of a pot simmering on a gas flame with rising bubbles and steam">
+                <rect x="0" y="340" width="460" height="14" rx="4" fill="var(--color-line)"/>
+                <g class="flame-flicker">
+                    <path d="M230 335 C210 330 205 310 218 292 C220 310 228 312 230 296 C240 312 250 330 230 335 Z" fill="var(--color-flame)"/>
+                    <path d="M230 332 C220 328 218 318 224 306 C225 316 232 317 231 308 C238 317 240 326 230 332 Z" fill="var(--color-gas)"/>
+                </g>
+                <rect x="130" y="200" width="200" height="85" rx="14" fill="#2B3634"/>
+                <rect x="118" y="192" width="224" height="16" rx="8" fill="#2B3634"/>
+                <rect x="96" y="190" width="28" height="14" rx="7" fill="#2B3634"/>
+                <rect x="336" y="190" width="28" height="14" rx="7" fill="#2B3634"/>
+                <circle class="bubble b1" cx="175" cy="198" r="5" fill="var(--color-gas)"/>
+                <circle class="bubble b2" cx="230" cy="196" r="4" fill="var(--color-flame)"/>
+                <circle class="bubble b3" cx="285" cy="198" r="6" fill="var(--color-gas)"/>
+                <circle class="bubble b4" cx="205" cy="197" r="3.5" fill="var(--color-flame)"/>
+                <path class="steam s1" d="M195 186 C185 170 205 160 195 144" stroke="#AAB6B1" stroke-width="3" fill="none" stroke-linecap="round"/>
+                <path class="steam s2" d="M265 186 C255 170 275 160 265 144" stroke="#AAB6B1" stroke-width="3" fill="none" stroke-linecap="round"/>
+            </svg>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="fact-card">
+            <span class="fact-label">First, a fact</span>
+            <p>Searing a steak does not "lock in" its juices — that's a kitchen myth. The crust forms because high, dry heat drives the Maillard reaction between amino acids and sugars. It has nothing to do with moisture, and everything to do with chemistry.</p>
+        </div>
+    </div>
+</section>
+
+<section class="section section-alt">
+    <div class="container">
+        <h2>Why your kitchen counts as a lab</h2>
+        <p class="lede">Cooking is applied chemistry with better smells. Heat unfolds proteins and rearranges sugars. Acids and bases swap electrons and release gas. Microbes you can't see convert flour and milk into bread and cheese. Nothing on this site requires special equipment — it's already sitting in your cupboard.</p>
+
+        <div class="explore-grid">
+            <a class="explore-card" href="{{ url_for('science') }}">
+                <span class="icon-wrap">
+                    <svg width="30" height="30" viewBox="0 0 30 30" fill="none"><path d="M12 4h6v6l5.5 10.8a2.6 2.6 0 01-2.3 3.8H8.8a2.6 2.6 0 01-2.3-3.8L12 10V4z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9.2 17.5h11.6" stroke="currentColor" stroke-width="1.8"/></svg>
+                </span>
+                <h3>The Science</h3>
+                <p>Eight reactions that explain most of what happens on your stove, from browning to fermentation.</p>
+                <span class="go">Read the concepts →</span>
+            </a>
+            <a class="explore-card" href="{{ url_for('experiments') }}">
+                <span class="icon-wrap">
+                    <svg width="30" height="30" viewBox="0 0 30 30" fill="none"><path d="M11 4h8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M13 4.5v9.3L7.4 22a2.4 2.4 0 002 3.7h11.2a2.4 2.4 0 002-3.7L17 13.8V4.5" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M10.5 19h9" stroke="currentColor" stroke-width="1.8"/></svg>
+                </span>
+                <h3>Experiments</h3>
+                <p>Five safe, kitchen-table experiments that make the chemistry visible.</p>
+                <span class="go">Pick one to try →</span>
+            </a>
+            <a class="explore-card" href="{{ url_for('mysteries') }}">
+                <span class="icon-wrap">
+                    <svg width="30" height="30" viewBox="0 0 30 30" fill="none"><circle cx="15" cy="15" r="11" stroke="currentColor" stroke-width="1.8"/><path d="M12 12a3 3 0 115 2.2c-1 .8-2 1.4-2 2.8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="15" cy="21" r="1.1" fill="currentColor"/></svg>
+                </span>
+                <h3>Kitchen Mysteries</h3>
+                <p>Answers to the questions you've always had while cooking, one at a time.</p>
+                <span class="go">Get answers →</span>
+            </a>
+            <a class="explore-card" href="{{ url_for('quiz') }}">
+                <span class="icon-wrap">
+                    <svg width="30" height="30" viewBox="0 0 30 30" fill="none"><rect x="5" y="5" width="20" height="20" rx="4" stroke="currentColor" stroke-width="1.8"/><path d="M10 15.5l3.2 3.2L20.5 11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+                <h3>Quiz</h3>
+                <p>Six questions to see how much kitchen chemistry has already rubbed off on you.</p>
+                <span class="go">Test yourself →</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

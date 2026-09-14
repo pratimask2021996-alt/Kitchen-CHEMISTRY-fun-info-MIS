@@ -1,0 +1,170 @@
+{% extends "base.html" %}
+{% block title %}Quiz — {{ site_name }}{% endblock %}
+
+{% block content %}
+
+<section class="section" style="padding-bottom: 0;">
+    <div class="container">
+        <h1>Test your kitchen chemistry</h1>
+        <p class="lede">Six questions pulled straight from the concepts on this site. No sign-up, no saved scores — just refresh to try again.</p>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="quiz-wrap">
+            <p class="quiz-progress" id="quizProgress">Question 1 of 6</p>
+
+            <div class="quiz-card" id="quizCard">
+                <p class="quiz-question" id="quizQuestion"></p>
+                <div class="quiz-options" id="quizOptions"></div>
+                <p class="quiz-feedback" id="quizFeedback"></p>
+                <button class="btn btn-flame quiz-next" id="quizNext" type="button">Next question</button>
+            </div>
+
+            <div class="quiz-card quiz-result" id="quizResult" style="display:none;">
+                <h2>Your score</h2>
+                <p class="score" id="quizScore"></p>
+                <p id="quizComment"></p>
+                <button class="btn btn-outline" id="quizRestart" type="button">Try again</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+(function () {
+    var quizData = [
+        {
+            q: "What makes seared meat turn brown, while boiled meat stays pale?",
+            options: ["The Maillard reaction", "Caramelization of fat", "Loss of moisture", "The amount of salt used"],
+            correct: 0,
+            explain: "It's the Maillard reaction — it needs dry heat above about 140°C (285°F), a temperature boiling water can never reach."
+        },
+        {
+            q: "What gas does baking soda release when it reacts with an acid?",
+            options: ["Oxygen", "Carbon dioxide", "Hydrogen", "Nitrogen"],
+            correct: 1,
+            explain: "Carbon dioxide — the same gas that gets trapped in dough and batter to make them rise."
+        },
+        {
+            q: "What is mayonnaise a classic kitchen example of?",
+            options: ["A gel", "A solution", "An emulsion", "A fermentation"],
+            correct: 2,
+            explain: "An emulsion — egg yolk's lecithin lets tiny droplets of oil disperse evenly through the water in the egg and vinegar."
+        },
+        {
+            q: "Why do cut apples turn brown?",
+            options: ["They lose water", "An enzyme reacts with oxygen in the air", "Bacteria grow on the cut surface", "Sugar in the apple caramelizes"],
+            correct: 1,
+            explain: "An enzyme called polyphenol oxidase reacts with oxygen the moment the flesh is exposed — no heat or bacteria involved."
+        },
+        {
+            q: "Which cooking method transfers heat mainly through electromagnetic waves?",
+            options: ["Boiling", "Pan-searing", "Microwaving", "Deep frying"],
+            correct: 2,
+            explain: "Microwaving — the waves excite water molecules directly inside the food, which is why it heats from the inside out."
+        },
+        {
+            q: "What ingredient in egg yolk lets it bind oil and water together in mayonnaise?",
+            options: ["Gluten", "Collagen", "Casein", "Lecithin"],
+            correct: 3,
+            explain: "Lecithin — it has a water-loving end and an oil-loving end, so it sits right at the boundary between the two liquids."
+        }
+    ];
+
+    var current = 0;
+    var score = 0;
+    var answered = false;
+
+    var progressEl = document.getElementById("quizProgress");
+    var questionEl = document.getElementById("quizQuestion");
+    var optionsEl = document.getElementById("quizOptions");
+    var feedbackEl = document.getElementById("quizFeedback");
+    var nextBtn = document.getElementById("quizNext");
+    var quizCard = document.getElementById("quizCard");
+    var resultCard = document.getElementById("quizResult");
+    var scoreEl = document.getElementById("quizScore");
+    var commentEl = document.getElementById("quizComment");
+    var restartBtn = document.getElementById("quizRestart");
+
+    function renderQuestion() {
+        answered = false;
+        var item = quizData[current];
+        progressEl.textContent = "Question " + (current + 1) + " of " + quizData.length;
+        questionEl.textContent = item.q;
+        feedbackEl.textContent = "";
+        nextBtn.style.display = "none";
+        optionsEl.innerHTML = "";
+
+        item.options.forEach(function (opt, i) {
+            var btn = document.createElement("button");
+            btn.type = "button";
+            btn.className = "quiz-option";
+            btn.textContent = opt;
+            btn.addEventListener("click", function () { selectOption(i, btn); });
+            optionsEl.appendChild(btn);
+        });
+    }
+
+    function selectOption(i, btn) {
+        if (answered) return;
+        answered = true;
+        var item = quizData[current];
+        var allButtons = optionsEl.querySelectorAll(".quiz-option");
+
+        allButtons.forEach(function (b, idx) {
+            b.disabled = true;
+            if (idx === item.correct) b.classList.add("correct");
+        });
+
+        if (i === item.correct) {
+            score++;
+            feedbackEl.textContent = "Correct. " + item.explain;
+        } else {
+            btn.classList.add("incorrect");
+            feedbackEl.textContent = "Not quite. " + item.explain;
+        }
+
+        nextBtn.style.display = "inline-flex";
+        nextBtn.textContent = (current === quizData.length - 1) ? "See your score" : "Next question";
+    }
+
+    function showResult() {
+        quizCard.style.display = "none";
+        resultCard.style.display = "block";
+        scoreEl.textContent = score + " / " + quizData.length;
+
+        var comment;
+        if (score === quizData.length) {
+            comment = "Perfect score — the kitchen has no secrets left from you.";
+        } else if (score >= quizData.length - 2) {
+            comment = "Solid work. A re-read of one or two sections and you'd ace it.";
+        } else {
+            comment = "A good starting point — head back to The Science page for a refresher.";
+        }
+        commentEl.textContent = comment;
+    }
+
+    nextBtn.addEventListener("click", function () {
+        current++;
+        if (current < quizData.length) {
+            renderQuestion();
+        } else {
+            showResult();
+        }
+    });
+
+    restartBtn.addEventListener("click", function () {
+        current = 0;
+        score = 0;
+        quizCard.style.display = "block";
+        resultCard.style.display = "none";
+        renderQuestion();
+    });
+
+    renderQuestion();
+})();
+</script>
+
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Page not found — {{ site_name }}{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="error-wrap">
+        <p class="code">404</p>
+        <h1>This one didn't rise.</h1>
+        <p class="lede" style="margin: 0 auto 28px;">The page you're looking for doesn't exist, or the link is off. Let's get you back to solid ground.</p>
+        <a href="{{ url_for('home') }}" class="btn btn-flame">Back to the kitchen</a>
+    </div>
+</div>
+{% endblock %}

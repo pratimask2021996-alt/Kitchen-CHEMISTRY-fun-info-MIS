@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% block title %}Kitchen Mysteries — {{ site_name }}{% endblock %}
+
+{% block content %}
+
+<section class="section" style="padding-bottom: 0;">
+    <div class="container">
+        <h1>Kitchen mysteries, solved</h1>
+        <p class="lede">The questions that come up while you're actually cooking. Tap one to reveal the answer.</p>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="mystery-list">
+
+            <details class="mystery-item">
+                <summary>Why do onions make you cry?<span class="plus">+</span></summary>
+                <div class="mystery-answer">
+                    <p>Slicing an onion ruptures its cells and releases an enzyme that reacts with sulfur compounds stored inside, forming a volatile gas. It drifts up to your eyes, mixes with your tears, and forms a mild acid — which is what actually stings. Your eyes respond by producing more tears to flush it out.</p>
+                    <p>Chilling the onion first slows the enzyme down, and cutting near a bowl of water or a fan helps carry the gas away before it reaches your eyes.</p>
+                </div>
+            </details>
+
+            <details class="mystery-item">
+                <summary>Why does bread dough rise?<span class="plus">+</span></summary>
+                <div class="mystery-answer">
+                    <p>Yeast feeds on the sugars in flour and releases carbon dioxide gas as a byproduct. Gluten — a stretchy protein network formed when flour is mixed with water — traps that gas instead of letting it escape, so the dough inflates like thousands of tiny balloons.</p>
+                    <p>Kneading develops more gluten, which is why a well-kneaded dough holds its rise better than one that's barely been worked.</p>
+                </div>
+            </details>
+
+            <details class="mystery-item">
+                <summary>Why does seared meat turn brown, but boiled meat doesn't?<span class="plus">+</span></summary>
+                <div class="mystery-answer">
+                    <p>Browning needs the Maillard reaction, and Maillard needs temperatures above roughly 140°C — something a pot of boiling water can never reach, since water caps out at 100°C no matter how long it boils.</p>
+                    <p>A dry pan or oven has no such ceiling, so a seared or roasted surface can climb well past that threshold and brown quickly, while a boiled or steamed piece of meat stays pale however long it cooks.</p>
+                </div>
+            </details>
+
+            <details class="mystery-item">
+                <summary>Why do cut apples and potatoes turn brown?<span class="plus">+</span></summary>
+                <div class="mystery-answer">
+                    <p>Cutting exposes plant cells to oxygen, which triggers an enzyme called polyphenol oxidase. It reacts with compounds in the flesh to form brown pigments — a process called enzymatic browning, unrelated to heat.</p>
+                    <p>Acid slows the enzyme down, which is why a splash of lemon juice keeps sliced apples pale, and keeping cut pieces underwater limits their oxygen exposure the same way.</p>
+                </div>
+            </details>
+
+            <details class="mystery-item">
+                <summary>Why does whipped cream turn into butter if you keep whisking?<span class="plus">+</span></summary>
+                <div class="mystery-answer">
+                    <p>Whisking beats tiny air bubbles into cream, and the fat globules in the cream cluster around each bubble to hold it in place — that's whipped cream.</p>
+                    <p>Keep whisking, and those fat globules start clumping together instead, squeezing out the liquid trapped between them and leaving behind a solid clump of fat: butter. It's the same fat, just reorganised.</p>
+                </div>
+            </details>
+
+            <details class="mystery-item">
+                <summary>Why does salt make food taste better — and keep it longer?<span class="plus">+</span></summary>
+                <div class="mystery-answer">
+                    <p>Salt sharpens flavour by suppressing our perception of bitterness and making sweet and savoury notes more noticeable — food doesn't just taste "saltier," it tastes more like itself.</p>
+                    <p>As a preservative, salt draws water out of bacterial and fungal cells through osmosis, dehydrating them faster than they can grow — the principle behind curing meat, pickling vegetables, and salting fish for storage.</p>
+                </div>
+            </details>
+
+            <details class="mystery-item">
+                <summary>Why does ice cream stay soft while a tray of ice turns rock hard?<span class="plus">+</span></summary>
+                <div class="mystery-answer">
+                    <p>Plain water freezes into large, interlocking ice crystals — hard all the way through. Ice cream is churned while it freezes, which breaks up crystals before they can grow large.</p>
+                    <p>It's also full of sugar, fat, and a little trapped air, all of which get in the way of crystal formation and lower the freezing point slightly. The result stays soft enough to scoop straight from the freezer.</p>
+                </div>
+            </details>
+
+        </div>
+    </div>
+</section>
+
+{% endblock %}

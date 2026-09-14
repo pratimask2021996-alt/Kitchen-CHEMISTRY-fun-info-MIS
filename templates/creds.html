@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block title %}Creds — {{ site_name }}{% endblock %}
+
+{% block content %}
+
+<section class="section" style="padding-bottom: 0;">
+    <div class="container">
+        <h1>Who's behind this</h1>
+        <p class="lede">A small crew put {{ site_name }} together — the research, the writing, and the design.</p>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="section-heading">
+            <span class="kicker">The team</span>
+            <h2>Project Members</h2>
+        </div>
+
+        <div class="members-grid">
+            <div class="member-card">
+                <img src="{{ url_for('static', filename='images/harsh.jpg') }}" alt="Harsh" class="member-photo">
+                <p class="member-name">Harsh</p>
+            </div>
+            <div class="member-card">
+                <img src="{{ url_for('static', filename='images/nayan.jpg') }}" alt="Nayan" class="member-photo">
+                <p class="member-name">Nayan</p>
+            </div>
+            <div class="member-card">
+                <img src="{{ url_for('static', filename='images/shreyash.jpg') }}" alt="Shreyash" class="member-photo">
+                <p class="member-name">Shreyash</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section section-alt">
+    <div class="container">
+        <div class="company-box">
+            <p class="created-by-label">Created By</p>
+            <p class="created-by-name">@ Horizon creates.mis</p>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

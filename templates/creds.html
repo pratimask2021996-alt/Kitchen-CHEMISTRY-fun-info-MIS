@@ -45,61 +45,83 @@
     </div>
 </section>
 
-<section class="section">
+<!-- Section 3: Institutional Guidance & Patrons (Director & Mentor) -->
+<section class="section leadership-section-wrap">
     <div class="container">
-        <div class="section-heading">
-            <span class="kicker">Mentorship</span>
-            <h2>Guiders</h2>
+        <div class="section-heading center">
+            <span class="section-label">// Visionary Guidance &amp; Institutional Patronage</span>
+            <h2>Chief Patron &amp; Academic Guiders</h2>
+            <p>Under the exemplary leadership and research encouragement of Manas International School</p>
         </div>
 
-        <div class="director-executive-card hud-corners">
+        <!-- Official Executive Director Card -->
+        <div class="director-executive-card reveal">
+            <!-- 1. PHOTO (Top) -->
             <div class="director-photo-container">
-                <div class="director-avatar-box">
-                    <span class="director-avatar-letter">DS</span>
-                    <span class="director-avatar-sub">DIRECTOR</span>
+                <div class="director-photo-ring">
+                    <img src="{{ url_for('static', filename='Images/director_sir.jpg') }}" alt="Raman Pradhan (Director Sir)" class="director-photo">
                 </div>
-                <span class="director-verified-badge">Verified</span>
+                <div class="director-verified-badge">★ Chief Patron ★</div>
             </div>
-            <h3 class="director-name">Director Sir</h3>
-            <p class="director-designation">Institutional Director</p>
+
+            <!-- 2. NAME -->
+            <h2 class="director-name">Raman Pradhan <span class="director-bracket">(Director Sir)</span></h2>
+
+            <!-- 3. DESIGNATION -->
+            <p class="director-designation">Director of Manas International School</p>
+
+            <!-- 4. SLOGAN -->
             <div class="director-slogan-wrapper">
-                <p class="director-slogan"><span class="slogan-decor">//</span> Guided With Vision <span class="slogan-decor">//</span></p>
+                <span class="slogan-decor">__</span>
+                <span class="director-slogan">“Knowledge Knows No Barrier”</span>
+                <span class="slogan-decor">__</span>
+                <span class="slogan-tagline">// Official Institutional Motto</span>
             </div>
+
             <div class="director-gold-divider"></div>
+
+            <!-- 5. EXECUTIVE SPEECH / MESSAGE -->
             <div class="director-quote-box">
-                <p class="quote-symbol">&ldquo;</p>
-                <p class="director-speech">Add Director Sir's message here.</p>
+                <div class="quote-symbol">“</div>
+                <p class="director-speech">
+                    True education flourishes when scientific curiosity meets fearless execution. Our students are the architects of tomorrow's technological landscape, and nurturing their innovative spirit in robotics and artificial intelligence remains our highest institutional commitment.
+                </p>
                 <div class="speech-footer">
-                    <span class="speech-underscore">—</span>
-                    <span class="speech-author">Director Sir</span>
+                    <span class="speech-underscore">_</span>
+                    <span class="speech-author">Raman Pradhan, Director</span>
+                    <span class="speech-underscore">_</span>
                 </div>
             </div>
         </div>
 
+        <!-- Technical Mentor Section (Ankit Sir) -->
         <div class="mentor-single-wrap">
-            <div class="leader-card mentor-card hud-corners">
-                <span class="leader-badge">Technical Mentor</span>
-                <div class="mentor-avatar-box">
-                    <span class="mentor-avatar-letter">AS</span>
-                    <span class="mentor-avatar-sub">MENTOR</span>
+            <div class="leader-card mentor-card reveal">
+                <div class="leader-badge mentor-badge">Project Mentor / Guide</div>
+                <div class="leader-img-wrapper">
+                    <img src="{{ url_for('static', filename='Images/guider1.jpg') }}" alt="Ankit Sir - Project Mentor" class="leader-photo">
                 </div>
-                <h3 class="leader-title">Ankit Sir</h3>
-                <p class="leader-designation">Technical Guide</p>
-                <div class="leader-divider"></div>
-                <p class="leader-desc">Add a short note about Ankit Sir's guidance here.</p>
+                <div class="leader-details">
+                    <h3 class="leader-title">Ankit Sir</h3>
+                    <p class="leader-designation">Faculty &amp; Technical Mentor</p>
+                    <div class="leader-divider"></div>
+                    <p class="leader-org">Department of Computer Science &amp; Robotics</p>
+                    <p class="leader-desc">Providing continuous technical guidance, circuit architecture validation, and software optimization.</p>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
-
-<section class="section section-alt">
+<div class="credit-container">
+  <p class="credit-text">Created by HORIZON CREATES.MIS</p>
+</div>
+<!-- Section 5: Slogan -->
+<section class="section slogan-section">
     <div class="container">
-        <div class="company-box">
-            <p class="created-by-label">Created By</p>
-            <p class="created-by-name">@ Horizon creates.mis</p>
+        <div class="slogan-box reveal">
+            <p class="slogan-text">If Horizon make to touch land to sky why we didn't make us to touch the sky.</p>
         </div>
     </div>
 </section>
-
 {% endblock %}

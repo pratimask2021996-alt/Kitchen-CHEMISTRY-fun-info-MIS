@@ -1569,19 +1569,20 @@ body::after {
     transform: translateY(-4px);
 }
 
+/* Director Avatar Box (RP) */
 .director-photo-container {
-    margin: 0 auto 26px;
+    margin: 0 auto 24px;
     display: inline-block;
     position: relative;
 }
 
 .director-avatar-box {
-    width: 150px;
-    height: 150px;
+    width: 180px;
+    height: 180px;
     border-radius: 50%;
-    background: radial-gradient(circle, var(--color-panel-2) 0%, var(--color-bg) 100%);
+    background: radial-gradient(circle, #0b150e 0%, #060a08 100%);
     border: 3px solid var(--color-flame);
-    box-shadow: var(--shadow-flame);
+    box-shadow: 0 0 35px rgba(0, 255, 102, 0.4);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1768,12 +1769,12 @@ body::after {
 }
 
 .mentor-avatar-box {
-    width: 130px;
-    height: 130px;
+    width: 160px;
+    height: 160px;
     border-radius: 50%;
-    background: var(--color-bg-alt);
+    background: #121212;
     border: 3px solid var(--color-gas);
-    box-shadow: var(--shadow-gas);
+    box-shadow: 0 0 25px rgba(0, 255, 102, 0.25);
     display: flex;
     flex-direction: column;
     align-items: center;
